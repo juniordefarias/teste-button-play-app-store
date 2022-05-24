@@ -65,6 +65,8 @@
     
     
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;  
+    console.log(userAgent)
+    console.dir(userAgent)
       if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         const buyButtonList = document.querySelectorAll('.buyButton');
         buyButtonList.forEach((button) => {
