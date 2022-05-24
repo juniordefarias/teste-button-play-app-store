@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="firstButton">first solution</button>
+  <br>
+  <br>
+  <button id="secondButton">second solution</button>
+  <br>
+  <br>
+  
+  <div class="answer"></div>
+
+  <script>
+    const firstButton = document.querySelector('#firstButton');
+    const secondButton = document.querySelector('#secondButton');
+
+    firstButton.addEventListener('click', () => {
+      const divAnswer = document.querySelector('.answer');
+      divAnswer.innerHTML = 'First Solution:'
+
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          console.log('iOS');
+          divAnswer.innerHTML += '<h1>app store!</h1>';
+          divAnswer.innerHTML += '<p>You are on iOS devive</p>';
+          divAnswer.innerHTML += '<a href="https://apps.apple.com/br/app/add-mall/id1561206197?l=en">app store</a>';
+      }
+      
+      console.log('Desktop or Android');
+      divAnswer.innerHTML += '<h1>play store!</h1>';
+      divAnswer.innerHTML += '<p>You are on Android or windows devive</p>';
+      divAnswer.innerHTML += '<a href="https://play.google.com/store/apps/details?id=com.mystory.baxisite">play store</a>';
+    })
+
+    secondButton.addEventListener('click', () => {
+      const divAnswer = document.querySelector('.answer');
+      divAnswer.innerHTML = 'Second Solution:'
+
+      if( navigator.userAgent.match(/iPhone/i)
+      || navigator.userAgent.match(/iPad/i)
+      || navigator.userAgent.match(/iPod/i)
+      ){
+          divAnswer.innerHTML += '<h1>app store!</h1>';
+          divAnswer.innerHTML += '<p>You are on iOS devive</p>';
+          divAnswer.innerHTML += '<a href="https://apps.apple.com/br/app/add-mall/id1561206197?l=en">app store</a>';
+        }
+
+      divAnswer.innerHTML += '<h1>play store!</h1>';
+      divAnswer.innerHTML += '<p>You are on Android or windows devive</p>';
+      divAnswer.innerHTML += '<a href="https://play.google.com/store/apps/details?id=com.mystory.baxisite">play store</a>';
+    })
+    
+  </script>
+</body>
+</html>
