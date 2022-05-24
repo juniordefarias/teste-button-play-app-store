@@ -7,7 +7,7 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Just a test</h1>
+  <strong>Camisa Polo </strong><small>R$ 89,99 </small><button class="buyButton">comprar</button>
   <br>
   <br>
   <button id="firstButton">first solution</button>
@@ -21,14 +21,11 @@
 
   <script>
     const firstButton = document.querySelector('#firstButton');
-    const secondButton = document.querySelector('#secondButton');
-
     firstButton.addEventListener('click', () => {
       const divAnswer = document.querySelector('.answer');
       divAnswer.innerHTML = 'First Solution:'
 
-      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;  
       if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
           console.log('iOS');
           divAnswer.innerHTML += '<h1>app store!</h1>';
@@ -43,6 +40,7 @@
       divAnswer.innerHTML += '<a href="https://play.google.com/store/apps/details?id=com.mystory.baxisite">play store</a>';
     })
 
+    const secondButton = document.querySelector('#secondButton');
     secondButton.addEventListener('click', () => {
       const divAnswer = document.querySelector('.answer');
       divAnswer.innerHTML = 'Second Solution:'
@@ -62,6 +60,13 @@
       divAnswer.innerHTML += '<a href="https://play.google.com/store/apps/details?id=com.mystory.baxisite">play store</a>';
     })
     
+    const buyButton = document.querySelector('.buyButton');
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;  
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          butButton.href = 'https://apps.apple.com/br/app/add-mall/id1561206197?l=en';
+      } else {
+        butButton.href = 'https://play.google.com/store/apps/details?id=com.mystory.baxisite';
+      }
   </script>
 </body>
 </html>
