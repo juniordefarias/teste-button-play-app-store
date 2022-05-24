@@ -7,7 +7,10 @@
   <title>Document</title>
 </head>
 <body>
-  <strong>Camisa Polo </strong><small>R$ 89,99 </small><button class="buyButton">comprar</button>
+  <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  
   <br>
   <br>
   <button id="firstButton">first solution</button>
@@ -60,12 +63,18 @@
       divAnswer.innerHTML += '<a href="https://play.google.com/store/apps/details?id=com.mystory.baxisite">play store</a>';
     })
     
-    const buyButton = document.querySelector('.buyButton');
+    
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;  
       if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-          butButton.href = 'https://apps.apple.com/br/app/add-mall/id1561206197?l=en';
+        const buyButtonList = document.querySelectorAll('.buyButton');
+        buyButtonList.forEach((button) => {
+          button.href = 'https://apps.apple.com/br/app/add-mall/id1561206197?l=en';
+        })
       } else {
-        butButton.href = 'https://play.google.com/store/apps/details?id=com.mystory.baxisite';
+        const buyButtonList = document.querySelectorAll('.buyButton');
+        buyButtonList.forEach((button) => {
+          button.href = 'https://play.google.com/store/apps/details?id=com.mystory.baxisite';
+        })
       }
   </script>
 </body>
