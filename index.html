@@ -21,6 +21,7 @@
   <br>
   
   <div class="answer"></div>
+  <div class="userAgentDiv"></div>
 
   <script>
     const firstButton = document.querySelector('#firstButton');
@@ -65,8 +66,9 @@
     
     
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;  
-    console.log(userAgent)
-    console.dir(userAgent)
+    const userAgentDiv = document.querySelector('.userAgentDiv');
+    userAgentDiv.innerHTML += `${userAgent}`;
+  
       if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         const buyButtonList = document.querySelectorAll('.buyButton');
         buyButtonList.forEach((button) => {
