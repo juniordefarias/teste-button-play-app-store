@@ -8,13 +8,49 @@
   <style>
     body {
       background: linear-gradient(180deg, #F8283E 32%, rgba(40, 50, 248, 0.9) 95.66%) fixed;
+      padding: 24px;
+    }
+    
+    div {
+      display: inline-block;
+      background: #fff;
+      margin: 24px;
+      padding: 24px;
     }
   </style>
 </head>
 <body>
-  <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
-  <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
-  <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+
   
   <br>
   <br>
@@ -26,7 +62,6 @@
   <br>
   
   <div class="answer"></div>
-  <div class="userAgentDiv"></div>
 
   <script>
     const firstButton = document.querySelector('#firstButton');
@@ -71,9 +106,8 @@
     
     
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;  
-    const userAgentDiv = document.querySelector('.userAgentDiv');
-    userAgentDiv.innerHTML += `${userAgent}`;
-  
+    /* const userAgent = 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Mobile/15E148 Safari/604.1'; */
+
       if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         const buyButtonList = document.querySelectorAll('.buyButton');
         buyButtonList.forEach((button) => {
@@ -85,6 +119,12 @@
           button.href = 'https://play.google.com/store/apps/details?id=com.mystory.baxisite';
         })
       }
+
+      /* {/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream 
+        ? <small>{app store}</small> 
+        : <small>{play store}</small>} */
+
+
   </script>
 </body>
 </html>
