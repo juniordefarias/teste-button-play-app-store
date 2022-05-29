@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,10 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background: linear-gradient(180deg, #F8283E 32%, rgba(40, 50, 248, 0.9) 95.66%) fixed;
+      background: linear-gradient(180deg, #F8283E 32%, rgba(40, 50, 248, 0.9) 95.66%) /* fixed */;
+      background-size: auto 100vh;
       overscroll-behavior-inline: contain;
       padding: 24px;
+      height: 2517px;
     }
     
     div {
@@ -19,9 +24,65 @@
       margin: 24px;
       padding: 24px;
     }
+
+    span {
+      background-color: green;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+
+      position: fixed;
+      bottom: 36px;
+      right: 24px;
+
+      padding: 12px 16px;
+      border-radius: 8px;
+
+      display: none;
+    }
+
+/*     @media screen and (max-height: 668px) {
+      body {
+        background-size: auto 140vh;
+      }
+    }
+
+    @media screen and (max-height: 580px) {
+      body {
+        background-size: auto 160vh;
+      }
+    } */
+
+    @media screen and (max-width: 500px) {
+      body {
+        background-size: auto 120vh;
+      }
+    }
+
+    @media screen and (max-width: 415px) {
+      body {
+        background-size: auto 140vh;
+      }
+    }
+
+    @media screen and (max-width: 377px) {
+      body {
+        background-size: auto 150vh;
+      }
+    }
+
+    @media screen and (max-width: 325px) {
+      body {
+        background-size: auto 150vh;
+        border: 10px solid blue;
+      }
+    }
+
   </style>
 </head>
 <body>
+  <span>Whatsapp</span>
+
   <div>
     <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
   </div>
@@ -52,6 +113,40 @@
   <div>
     <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
   </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+  <div>
+    <strong>Camisa Polo </strong><small>R$ 89,99 </small><a class="buyButton" href="#" target="_blank">comprar</a><br><br>
+  </div>
+
 
   
   <br>
@@ -126,6 +221,55 @@
         ? <small>{app store}</small> 
         : <small>{play store}</small>} */
 
+    const debounce = function(func, wait, immediate) {
+      let timeout;
+      return function(...args) {
+        const context = this;
+        const later = function () {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
+    
+    const whatsapp = document.querySelector('span')
+    let lastScroll = 0;
+    let change = 0;
+
+    window.addEventListener('scroll', (event) => {
+      if (this.scrollY > lastScroll) {
+        change = change + this.scrollY - lastScroll;
+        if (change > 100) {
+          console.log({change})
+          whatsapp.style.display = 'none';
+        } 
+      } else {
+        change = 0
+        whatsapp.style.display = 'block';
+      }
+      console.log(change)
+      lastScroll = this.scrollY
+    })
+    
+    /* window.addEventListener('scroll', (event) => {
+      if (this.scrollY < lastScroll) {
+        change = change + this.scrollY - lastScroll;
+        console.log(change)
+        if (change < -220) {
+          whatsapp.style.display = 'block';
+        } 
+      } else {
+        change = 0
+        whatsapp.style.display = 'none';
+      }
+
+      lastScroll = this.scrollY
+    }) */
+    
 
   </script>
 </body>
